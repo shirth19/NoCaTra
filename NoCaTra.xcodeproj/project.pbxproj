@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		FF41CBBB2DB5CFCE0019F1F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF41CBA52DB5CFCE0019F1F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF41CBAC2DB5CFCE0019F1F3;
+			remoteInfo = NoCaTra;
+		};
+		FF41CBC52DB5CFCE0019F1F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF41CBA52DB5CFCE0019F1F3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF41CBAC2DB5CFCE0019F1F3;
+			remoteInfo = NoCaTra;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF41CBAD2DB5CFCE0019F1F3 /* NoCaTra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NoCaTra.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF41CBBA2DB5CFCE0019F1F3 /* NoCaTraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoCaTraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF41CBC42DB5CFCE0019F1F3 /* NoCaTraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NoCaTraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FF41CBAF2DB5CFCE0019F1F3 /* NoCaTra */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NoCaTra;
+			sourceTree = "<group>";
+		};
+		FF41CBBD2DB5CFCE0019F1F3 /* NoCaTraTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NoCaTraTests;
+			sourceTree = "<group>";
+		};
+		FF41CBC72DB5CFCE0019F1F3 /* NoCaTraUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NoCaTraUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF41CBAA2DB5CFCE0019F1F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF41CBB72DB5CFCE0019F1F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF41CBC12DB5CFCE0019F1F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF41CBA42DB5CFCE0019F1F3 = {
+			isa = PBXGroup;
+			children = (
+				FF41CBAF2DB5CFCE0019F1F3 /* NoCaTra */,
+				FF41CBBD2DB5CFCE0019F1F3 /* NoCaTraTests */,
+				FF41CBC72DB5CFCE0019F1F3 /* NoCaTraUITests */,
+				FF41CBAE2DB5CFCE0019F1F3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF41CBAE2DB5CFCE0019F1F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF41CBAD2DB5CFCE0019F1F3 /* NoCaTra.app */,
+				FF41CBBA2DB5CFCE0019F1F3 /* NoCaTraTests.xctest */,
+				FF41CBC42DB5CFCE0019F1F3 /* NoCaTraUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF41CBAC2DB5CFCE0019F1F3 /* NoCaTra */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF41CBCE2DB5CFCE0019F1F3 /* Build configuration list for PBXNativeTarget "NoCaTra" */;
+			buildPhases = (
+				FF41CBA92DB5CFCE0019F1F3 /* Sources */,
+				FF41CBAA2DB5CFCE0019F1F3 /* Frameworks */,
+				FF41CBAB2DB5CFCE0019F1F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FF41CBAF2DB5CFCE0019F1F3 /* NoCaTra */,
+			);
+			name = NoCaTra;
+			packageProductDependencies = (
+			);
+			productName = NoCaTra;
+			productReference = FF41CBAD2DB5CFCE0019F1F3 /* NoCaTra.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF41CBB92DB5CFCE0019F1F3 /* NoCaTraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF41CBD12DB5CFCE0019F1F3 /* Build configuration list for PBXNativeTarget "NoCaTraTests" */;
+			buildPhases = (
+				FF41CBB62DB5CFCE0019F1F3 /* Sources */,
+				FF41CBB72DB5CFCE0019F1F3 /* Frameworks */,
+				FF41CBB82DB5CFCE0019F1F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF41CBBC2DB5CFCE0019F1F3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FF41CBBD2DB5CFCE0019F1F3 /* NoCaTraTests */,
+			);
+			name = NoCaTraTests;
+			packageProductDependencies = (
+			);
+			productName = NoCaTraTests;
+			productReference = FF41CBBA2DB5CFCE0019F1F3 /* NoCaTraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF41CBC32DB5CFCE0019F1F3 /* NoCaTraUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF41CBD42DB5CFCE0019F1F3 /* Build configuration list for PBXNativeTarget "NoCaTraUITests" */;
+			buildPhases = (
+				FF41CBC02DB5CFCE0019F1F3 /* Sources */,
+				FF41CBC12DB5CFCE0019F1F3 /* Frameworks */,
+				FF41CBC22DB5CFCE0019F1F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF41CBC62DB5CFCE0019F1F3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FF41CBC72DB5CFCE0019F1F3 /* NoCaTraUITests */,
+			);
+			name = NoCaTraUITests;
+			packageProductDependencies = (
+			);
+			productName = NoCaTraUITests;
+			productReference = FF41CBC42DB5CFCE0019F1F3 /* NoCaTraUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF41CBA52DB5CFCE0019F1F3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					FF41CBAC2DB5CFCE0019F1F3 = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					FF41CBB92DB5CFCE0019F1F3 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = FF41CBAC2DB5CFCE0019F1F3;
+					};
+					FF41CBC32DB5CFCE0019F1F3 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = FF41CBAC2DB5CFCE0019F1F3;
+					};
+				};
+			};
+			buildConfigurationList = FF41CBA82DB5CFCE0019F1F3 /* Build configuration list for PBXProject "NoCaTra" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF41CBA42DB5CFCE0019F1F3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = FF41CBAE2DB5CFCE0019F1F3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF41CBAC2DB5CFCE0019F1F3 /* NoCaTra */,
+				FF41CBB92DB5CFCE0019F1F3 /* NoCaTraTests */,
+				FF41CBC32DB5CFCE0019F1F3 /* NoCaTraUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF41CBAB2DB5CFCE0019F1F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF41CBB82DB5CFCE0019F1F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF41CBC22DB5CFCE0019F1F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF41CBA92DB5CFCE0019F1F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF41CBB62DB5CFCE0019F1F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF41CBC02DB5CFCE0019F1F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF41CBBC2DB5CFCE0019F1F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF41CBAC2DB5CFCE0019F1F3 /* NoCaTra */;
+			targetProxy = FF41CBBB2DB5CFCE0019F1F3 /* PBXContainerItemProxy */;
+		};
+		FF41CBC62DB5CFCE0019F1F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF41CBAC2DB5CFCE0019F1F3 /* NoCaTra */;
+			targetProxy = FF41CBC52DB5CFCE0019F1F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FF41CBCC2DB5CFCE0019F1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF41CBCD2DB5CFCE0019F1F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF41CBCF2DB5CFCE0019F1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sirth.NoCaTra;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF41CBD02DB5CFCE0019F1F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sirth.NoCaTra;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF41CBD22DB5CFCE0019F1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sirth.NoCaTraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoCaTra.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NoCaTra";
+			};
+			name = Debug;
+		};
+		FF41CBD32DB5CFCE0019F1F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sirth.NoCaTraTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NoCaTra.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NoCaTra";
+			};
+			name = Release;
+		};
+		FF41CBD52DB5CFCE0019F1F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sirth.NoCaTraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NoCaTra;
+			};
+			name = Debug;
+		};
+		FF41CBD62DB5CFCE0019F1F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Sirth.NoCaTraUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NoCaTra;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF41CBA82DB5CFCE0019F1F3 /* Build configuration list for PBXProject "NoCaTra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF41CBCC2DB5CFCE0019F1F3 /* Debug */,
+				FF41CBCD2DB5CFCE0019F1F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF41CBCE2DB5CFCE0019F1F3 /* Build configuration list for PBXNativeTarget "NoCaTra" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF41CBCF2DB5CFCE0019F1F3 /* Debug */,
+				FF41CBD02DB5CFCE0019F1F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF41CBD12DB5CFCE0019F1F3 /* Build configuration list for PBXNativeTarget "NoCaTraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF41CBD22DB5CFCE0019F1F3 /* Debug */,
+				FF41CBD32DB5CFCE0019F1F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF41CBD42DB5CFCE0019F1F3 /* Build configuration list for PBXNativeTarget "NoCaTraUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF41CBD52DB5CFCE0019F1F3 /* Debug */,
+				FF41CBD62DB5CFCE0019F1F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF41CBA52DB5CFCE0019F1F3 /* Project object */;
+}
