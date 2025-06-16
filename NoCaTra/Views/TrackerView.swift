@@ -29,11 +29,24 @@ public struct TrackerView: View {
     internal var todayEntries: [EntryModule] {
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
+
         let tomorrow = calendar.date(byAdding: .day, value: 1, to: today)!
-        
-        return allEntries.filter { entry in
-            guard entry.date >= today && entry.date < tomorrow else { return false }
-            
+        let yesterday = calendar.date(byAdding: .day, value: -1, to: today)!
+        let twoDaysAgo = calendar.date(byAdding: .day, value: -2, to: today)!
+
+        let filtered = allEntries.filter { entry in
+            let dateRange: Range<Date>
+            switch entry.contentType {
+            case .plan:
+                dateRange = today..<tomorrow
+            case .diary:
+                dateRange = yesterday..<today
+            case .rating:
+                dateRange = twoDaysAgo..<yesterday
+            }
+
+            guard dateRange.contains(entry.date) else { return false }
+
             switch (entry.category, entry.contentType) {
             case (.food, .diary): return unlockableViewModel.unlockStates[0]
             case (.food, .plan): return unlockableViewModel.unlockStates[1]
@@ -46,6 +59,8 @@ public struct TrackerView: View {
             case (.mindfulness, .rating): return unlockableViewModel.unlockStates[8]
             }
         }
+
+        return filtered.sortedByCategoryAndContent()
     }
 
     public var body: some View {
