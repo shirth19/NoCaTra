@@ -23,6 +23,7 @@ struct EntryModuleView: View {
     @Binding var ratingOne: Int?
     @Binding var ratingTwo: Int?
     @Binding var isLocked: Bool
+    var previousContent: String? = nil
     
     @State private var isSessionStarted = false
     @State private var sessionTimer: Timer? = nil
@@ -105,7 +106,8 @@ struct EntryModuleView: View {
                     contentType: module.contentType,
                     content: $content,
                     ratingOne: $ratingOne,
-                    ratingTwo: $ratingTwo
+                    ratingTwo: $ratingTwo,
+                    previousContent: previousContent
                 )
                     .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
             }

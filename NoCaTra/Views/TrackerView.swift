@@ -63,6 +63,20 @@ public struct TrackerView: View {
         return filtered.sortedByCategoryAndContent()
     }
 
+    /// Fetch the diary content from two days ago for the given category.
+    internal func diaryFromTwoDaysAgo(for category: EntryCategory) -> String? {
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        let start = calendar.date(byAdding: .day, value: -2, to: today)!
+        let end = calendar.date(byAdding: .day, value: -1, to: today)!
+
+        return allEntries.first(where: { entry in
+            entry.category == category &&
+            entry.contentType == .diary &&
+            entry.date >= start && entry.date < end
+        })?.content
+    }
+
     public var body: some View {
         ScrollView {
             VStack(spacing: 12) {
@@ -75,7 +89,8 @@ public struct TrackerView: View {
                         content: contentBinding,
                         ratingOne: ratingOneBinding,
                         ratingTwo: ratingTwoBinding,
-                        isLocked: isLockedBinding
+                        isLocked: isLockedBinding,
+                        previousContent: entry.contentType == .rating ? diaryFromTwoDaysAgo(for: entry.category) : nil
                     )
                 }
             }
