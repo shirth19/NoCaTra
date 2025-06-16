@@ -12,10 +12,12 @@ struct CalendarTabView: View {
     @StateObject private var calendarViewModel = CalendarViewModel()
     
     var body: some View {
-        VStack(spacing: 0) {
-            CalendarHeaderView()
-            CalendarView(selectedDate: $selectedDate, calendarViewModel: calendarViewModel)
-            CalendarDailyInfoView(selectedDate: selectedDate, viewModel: calendarViewModel)
+        ScrollView {
+            VStack(spacing: 0) {
+                CalendarHeaderView()
+                CalendarView(selectedDate: $selectedDate, calendarViewModel: calendarViewModel)
+                CalendarDailyInfoView(selectedDate: selectedDate, viewModel: calendarViewModel)
+            }
         }
     }
 }

@@ -20,10 +20,11 @@ struct CalendarDailyInfoView: View {
     }()
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(dateFormatter.string(from: selectedDate))
-                .font(.headline)
-                .padding(.horizontal)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 12) {
+                Text(dateFormatter.string(from: selectedDate))
+                    .font(.headline)
+                    .padding(.horizontal)
             
             Divider()
             
@@ -40,20 +41,14 @@ struct CalendarDailyInfoView: View {
                         .italic()
                 } else {
                     ForEach(entriesForDate) { entry in
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(entry.category.rawValue.capitalized)
-                                .font(.caption)
-                                .foregroundColor(.gray)
-
+                        GroupBox(label: Text(entry.category.rawValue.capitalized)) {
                             switch entry.contentType {
                             case .diary, .plan:
                                 TextField("Entry content", text: Binding(
                                     get: { entry.content },
-                                    set: { newValue in
-                                        viewModel.update(entry: entry, with: newValue)
-                                    }
+                                    set: { viewModel.update(entry: entry, with: $0) }
                                 ))
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .textFieldStyle(.roundedBorder)
 
                             case .rating:
                                 HStack(spacing: 20) {
@@ -92,12 +87,10 @@ struct CalendarDailyInfoView: View {
                 }
             }
             .padding(.horizontal)
-            
-            Spacer()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(white: 0.95))
     }
+    .background(Color(white: 0.95))
 }
 
 #Preview {

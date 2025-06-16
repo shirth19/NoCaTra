@@ -6,15 +6,10 @@
 //
 
 import SwiftUI
-struct IdentifiableDate: Identifiable {
-    let id = UUID()
-    let date: Date
-}
 
 struct CalendarView: View {
     @Binding var selectedDate: Date
     @State private var displayedMonth = Date()
-    @State private var selectedDateForSheet: IdentifiableDate? = nil
     @ObservedObject var calendarViewModel: CalendarViewModel
     private let calendar = Calendar.current
     private let weekdaySymbols = Calendar.current.veryShortWeekdaySymbols
@@ -58,7 +53,6 @@ struct CalendarView: View {
                                isToday: calendar.isDateInToday(date))
                             .onTapGesture {
                                 selectedDate = date
-                                selectedDateForSheet = IdentifiableDate(date: date)
                             }
                     } else {
                         Color.clear
@@ -68,9 +62,6 @@ struct CalendarView: View {
             }
         }
         .padding()
-        .sheet(item: $selectedDateForSheet) { identifiableDate in
-            CalendarDailyInfoView(selectedDate: identifiableDate.date, viewModel: calendarViewModel)
-        }
     }
     
     private var monthYearString: String {
