@@ -23,6 +23,7 @@ struct EntryModuleView: View {
     @Binding var ratingOne: Int?
     @Binding var ratingTwo: Int?
     @Binding var isLocked: Bool
+    var previousContent: String? = nil
     
     @State private var isSessionStarted = false
     @State private var sessionTimer: Timer? = nil
@@ -41,26 +42,30 @@ struct EntryModuleView: View {
         }
     }
     
-    private var caption: String {
+    private var caption: Text {
+        if !canStartSession && !isOpen {
+            return Text("Completed, but you can still edit in the calendar. Don't worry if you didn't get everything")
+        }
+
         switch (module.category, module.contentType) {
         case (.food, .diary):
-            return "Record what you ate today"
+            return Text("Track your meals from ") + Text("yesterday").bold()
         case (.food, .plan):
-            return "Plan your meals for today"
+            return Text("Plan your meals for today")
         case (.food, .rating):
-            return "Rate your eating habits today"
+            return Text("Rate your meals from ") + Text("2 days ago").bold()
         case (.exercise, .diary):
-            return "Record your activities today"
+            return Text("Track your exercise from ") + Text("yesterday").bold()
         case (.exercise, .plan):
-            return "Plan your workouts for today"
+            return Text("Plan your workouts for today")
         case (.exercise, .rating):
-            return "Rate your exercise habits today"
+            return Text("Rate your exercise from ") + Text("2 days ago").bold()
         case (.mindfulness, .diary):
-            return "Record your mindfulness practice today"
+            return Text("Track your mindfulness practice from ") + Text("yesterday").bold()
         case (.mindfulness, .plan):
-            return "Plan your mindfulness activities for today"
+            return Text("Plan your mindfulness activities for today")
         case (.mindfulness, .rating):
-            return "Rate your mindfulness practice today"
+            return Text("Rate your mindfulness practice from ") + Text("2 days ago").bold()
         }
     }
     
@@ -105,13 +110,14 @@ struct EntryModuleView: View {
                     contentType: module.contentType,
                     content: $content,
                     ratingOne: $ratingOne,
-                    ratingTwo: $ratingTwo
+                    ratingTwo: $ratingTwo,
+                    previousContent: previousContent
                 )
                     .transition(AnyTransition.move(edge: .top).combined(with: .opacity))
             }
             
             // Caption
-            Text(caption)
+            caption
                 .font(.caption)
                 .foregroundStyle(.secondary)
         }

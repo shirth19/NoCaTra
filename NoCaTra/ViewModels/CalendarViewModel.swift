@@ -22,7 +22,9 @@ class CalendarViewModel: ObservableObject {
             }
         )
 
-        return (try? context.fetch(descriptor)) ?? []
+        let fetched = (try? context.fetch(descriptor)) ?? []
+
+        return fetched.sortedByCategoryAndContent()
     }
 
     /// Update an entry's content directly in the model.

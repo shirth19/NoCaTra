@@ -17,6 +17,7 @@ struct EntryModuleMiddleView: View {
     @Binding var content: String
     @Binding var ratingOne: Int?
     @Binding var ratingTwo: Int?
+    var previousContent: String? = nil
     
     var body: some View {
         VStack(spacing: 12) {
@@ -29,33 +30,41 @@ struct EntryModuleMiddleView: View {
                     .cornerRadius(8)
                 
             case .rating:
-                HStack(spacing: 20) {
-                    VStack {
-                        Text("Healthiness")
-                            .font(.caption)
-                        Picker("Rating One", selection: Binding(
-                            get: { ratingOne ?? 5 },
-                            set: { ratingOne = $0 }
-                        )) {
-                            ForEach(1...10, id: \.self) { num in
-                                Text("\(num)")
-                            }
-                        }
-                        .pickerStyle(.menu)
+                VStack(alignment: .leading, spacing: 8) {
+                    if let text = previousContent, !text.isEmpty {
+                        Text(text)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
                     }
-                    
-                    VStack {
-                        Text("Happiness")
-                            .font(.caption)
-                        Picker("Rating Two", selection: Binding(
-                            get: { ratingTwo ?? 5 },
-                            set: { ratingTwo = $0 }
-                        )) {
-                            ForEach(1...10, id: \.self) { num in
-                                Text("\(num)")
+                    HStack(spacing: 20) {
+                        VStack {
+                            Text("Healthiness")
+                                .font(.caption)
+                            Picker("Rating One", selection: Binding(
+                                get: { ratingOne ?? 5 },
+                                set: { ratingOne = $0 }
+                            )) {
+                                ForEach(1...10, id: \.self) { num in
+                                    Text("\(num)")
+                                }
                             }
+                            .pickerStyle(.menu)
                         }
-                        .pickerStyle(.menu)
+
+                        VStack {
+                            Text("Happiness")
+                                .font(.caption)
+                            Picker("Rating Two", selection: Binding(
+                                get: { ratingTwo ?? 5 },
+                                set: { ratingTwo = $0 }
+                            )) {
+                                ForEach(1...10, id: \.self) { num in
+                                    Text("\(num)")
+                                }
+                            }
+                            .pickerStyle(.menu)
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -85,7 +94,8 @@ struct EntryModuleMiddleView: View {
                     contentType: .rating,
                     content: $text,
                     ratingOne: $ratingOne,
-                    ratingTwo: $ratingTwo
+                    ratingTwo: $ratingTwo,
+                    previousContent: "Yesterday's diary"
                 )
             }
             .padding()
