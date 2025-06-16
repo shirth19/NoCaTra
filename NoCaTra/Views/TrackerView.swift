@@ -90,17 +90,26 @@ public struct TrackerView: View {
         
         let contentBinding = Binding(
             get: { contentState[entry.id] ?? entry.content },
-            set: { contentState[entry.id] = $0 }
+            set: { newValue in
+                contentState[entry.id] = newValue
+                entry.content = newValue
+            }
         )
         
         let ratingOneBinding = Binding(
             get: { ratingOneState[entry.id] ?? entry.ratingOne },
-            set: { ratingOneState[entry.id] = $0 }
+            set: { newValue in
+                ratingOneState[entry.id] = newValue
+                entry.ratingOne = newValue
+            }
         )
         
         let ratingTwoBinding = Binding(
             get: { ratingTwoState[entry.id] ?? entry.ratingTwo },
-            set: { ratingTwoState[entry.id] = $0 }
+            set: { newValue in
+                ratingTwoState[entry.id] = newValue
+                entry.ratingTwo = newValue
+            }
         )
 
         let isLockedBinding = Binding(

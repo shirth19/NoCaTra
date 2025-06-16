@@ -6,23 +6,29 @@
 //
 import SwiftUI
 import Foundation
+import SwiftData
 
 class CalendarViewModel: ObservableObject {
-    @Published var allEntries: [EntryModule] = []
 
-    // Load or generate entries
-    func entries(for date: Date) -> [EntryModule] {
+    /// Fetch entries for a specific date from `ModelContext`.
+    func entries(for date: Date, context: ModelContext) -> [EntryModule] {
         let calendar = Calendar.current
-        return allEntries.filter {
-            calendar.isDate($0.date, inSameDayAs: date)
-        }
+        let startOfDay = calendar.startOfDay(for: date)
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay)!
+
+        let descriptor = FetchDescriptor<EntryModule>(
+            predicate: #Predicate { entry in
+                entry.date >= startOfDay && entry.date < endOfDay
+            }
+        )
+
+        return (try? context.fetch(descriptor)) ?? []
     }
 
+    /// Update an entry's content directly in the model.
     func update(entry: EntryModule, with newContent: String) {
-        if let index = allEntries.firstIndex(where: { $0.id == entry.id }) {
-            if allEntries[index].content != newContent {
-                allEntries[index].content = newContent
-            }
+        if entry.content != newContent {
+            entry.content = newContent
         }
     }
 }

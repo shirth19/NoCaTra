@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CalendarDailyInfoView: View {
     let selectedDate: Date
     @ObservedObject var viewModel: CalendarViewModel
+    @Environment(\.modelContext) private var context
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -30,7 +32,7 @@ struct CalendarDailyInfoView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
                 
-                let entriesForDate = viewModel.entries(for: selectedDate)
+                let entriesForDate = viewModel.entries(for: selectedDate, context: context)
 
                 if entriesForDate.isEmpty {
                     Text("No entries for today")
