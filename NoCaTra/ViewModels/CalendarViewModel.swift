@@ -31,4 +31,18 @@ class CalendarViewModel: ObservableObject {
             entry.content = newContent
         }
     }
+
+    /// Update an entry's first rating value.
+    func update(entry: EntryModule, ratingOne: Int) {
+        if entry.ratingOne != ratingOne {
+            entry.ratingOne = ratingOne
+        }
+    }
+
+    /// Update an entry's second rating value.
+    func update(entry: EntryModule, ratingTwo: Int) {
+        if entry.ratingTwo != ratingTwo {
+            entry.ratingTwo = ratingTwo
+        }
+    }
 }

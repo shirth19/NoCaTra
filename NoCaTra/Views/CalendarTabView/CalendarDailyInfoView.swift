@@ -44,13 +44,48 @@ struct CalendarDailyInfoView: View {
                             Text(entry.category.rawValue.capitalized)
                                 .font(.caption)
                                 .foregroundColor(.gray)
-                            TextField("Entry content", text: Binding(
-                                get: { entry.content },
-                                set: { newValue in
-                                    viewModel.update(entry: entry, with: newValue)
+
+                            switch entry.contentType {
+                            case .diary, .plan:
+                                TextField("Entry content", text: Binding(
+                                    get: { entry.content },
+                                    set: { newValue in
+                                        viewModel.update(entry: entry, with: newValue)
+                                    }
+                                ))
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+
+                            case .rating:
+                                HStack(spacing: 20) {
+                                    VStack {
+                                        Text("Healthiness")
+                                            .font(.caption)
+                                        Picker("Rating One", selection: Binding(
+                                            get: { entry.ratingOne ?? 5 },
+                                            set: { viewModel.update(entry: entry, ratingOne: $0) }
+                                        )) {
+                                            ForEach(1...10, id: \.self) { num in
+                                                Text("\(num)")
+                                            }
+                                        }
+                                        .pickerStyle(.menu)
+                                    }
+
+                                    VStack {
+                                        Text("Happiness")
+                                            .font(.caption)
+                                        Picker("Rating Two", selection: Binding(
+                                            get: { entry.ratingTwo ?? 5 },
+                                            set: { viewModel.update(entry: entry, ratingTwo: $0) }
+                                        )) {
+                                            ForEach(1...10, id: \.self) { num in
+                                                Text("\(num)")
+                                            }
+                                        }
+                                        .pickerStyle(.menu)
+                                    }
                                 }
-                            ))
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            }
                         }
                         .padding(.vertical, 4)
                     }
