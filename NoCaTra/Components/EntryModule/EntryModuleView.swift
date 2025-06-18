@@ -24,6 +24,7 @@ struct EntryModuleView: View {
     @Binding var ratingTwo: Int?
     @Binding var isLocked: Bool
     var previousContent: String? = nil
+    var streak: Int = 0
     
     @State private var isSessionStarted = false
     @State private var sessionTimer: Timer? = nil
@@ -120,6 +121,10 @@ struct EntryModuleView: View {
             caption
                 .font(.caption)
                 .foregroundStyle(.secondary)
+
+            Text("Streak: \(streak)")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
         }
         .padding()
         .background(
@@ -134,6 +139,7 @@ struct EntryModuleView: View {
         isSessionStarted = true
         canStartSession = false
         timeRemaining = 300
+        module.isCompleted = false
         sessionTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if timeRemaining > 0 {
                 timeRemaining -= 1
@@ -143,6 +149,7 @@ struct EntryModuleView: View {
                     isOpen = false
                     isSessionStarted = false
                     timer.invalidate()
+                    module.isCompleted = true
                 }
             }
         }
@@ -153,5 +160,6 @@ struct EntryModuleView: View {
         sessionTimer = nil
         isOpen = false
         isSessionStarted = false
+        module.isCompleted = true
     }
 }
