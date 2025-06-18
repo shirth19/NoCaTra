@@ -12,7 +12,8 @@ struct CalendarHeaderView: View {
         Text("Tracker Calendar")
             .font(.title2)
             .fontWeight(.bold)
-            .padding()
+            .foregroundColor(ColorTheme.accent)
+            .padding(.vertical, 8)
     }
 }
 

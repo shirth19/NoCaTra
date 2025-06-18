@@ -20,7 +20,7 @@ struct CalendarView: View {
             HStack {
                 Button(action: previousMonth) {
                     Image(systemName: "chevron.left")
-                        .foregroundColor(.blue)
+                        .foregroundColor(ColorTheme.accent)
                 }
                 
                 Text(monthYearString)
@@ -30,7 +30,7 @@ struct CalendarView: View {
                 
                 Button(action: nextMonth) {
                     Image(systemName: "chevron.right")
-                        .foregroundColor(.blue)
+                        .foregroundColor(ColorTheme.accent)
                 }
             }
             .padding(.horizontal)
@@ -62,6 +62,12 @@ struct CalendarView: View {
             }
         }
         .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .fill(ColorTheme.background)
+                .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
+        )
+        .padding(.horizontal)
     }
     
     private var monthYearString: String {
@@ -116,25 +122,32 @@ struct DayView: View {
     let isSelected: Bool
     let isToday: Bool
     private let calendar = Calendar.current
-    
+
     var body: some View {
         Text("\(calendar.component(.day, from: date))")
             .frame(maxWidth: .infinity)
             .aspectRatio(1, contentMode: .fill)
             .background(background)
+            .foregroundColor(textColor)
             .clipShape(Circle())
     }
-    
+
     private var background: some View {
         Group {
             if isSelected {
                 Circle()
-                    .fill(Color.blue)
+                    .fill(ColorTheme.accent)
             } else if isToday {
                 Circle()
-                    .stroke(Color.blue, lineWidth: 1)
+                    .stroke(ColorTheme.accent, lineWidth: 1)
             }
         }
+    }
+
+    private var textColor: Color {
+        if isSelected { return .white }
+        if calendar.isDateInWeekend(date) { return .secondary }
+        return .primary
     }
 }
 

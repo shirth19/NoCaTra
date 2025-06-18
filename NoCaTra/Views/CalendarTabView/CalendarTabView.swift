@@ -19,6 +19,7 @@ struct CalendarTabView: View {
                 CalendarDailyInfoView(selectedDate: selectedDate, viewModel: calendarViewModel)
             }
         }
+        .background(ColorTheme.background.ignoresSafeArea())
     }
 }
 

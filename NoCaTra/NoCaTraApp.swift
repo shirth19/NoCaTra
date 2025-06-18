@@ -8,12 +8,16 @@
 import SwiftUI
 import SwiftData
 
+/// Global color theme for the app
+fileprivate let appAccent = ColorTheme.accent
+
 @main
 struct NoCaTraApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .modelContainer(for: EntryModule.self)
+                .tint(appAccent)
                 .onAppear {
                     if checkFirstEver() {
                         FirstEver.setStartDate()

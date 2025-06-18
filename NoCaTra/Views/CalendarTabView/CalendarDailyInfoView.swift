@@ -41,7 +41,7 @@ struct CalendarDailyInfoView: View {
                             .italic()
                     } else {
                         ForEach(entriesForDate) { entry in
-                            GroupBox(label: Text(entry.category.rawValue.capitalized)) {
+                            GroupBox(label: Text(entry.category.rawValue.capitalized).foregroundColor(ColorTheme.accent)) {
                                 switch entry.contentType {
                                 case .diary, .plan:
                                     TextField("Entry content", text: Binding(
@@ -90,6 +90,6 @@ struct CalendarDailyInfoView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .background(Color(white: 0.95))
+        .background(ColorTheme.background)
     }
 }
