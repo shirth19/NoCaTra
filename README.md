@@ -9,4 +9,4 @@ Goals:
 Next changes:
 - Make an unlockable section?
 - Change the calendar to make it more clear
-- Make the calendar say what is diary vs plan
+- ~~Make the calendar say what is diary vs plan~~ (done)

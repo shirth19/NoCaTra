@@ -41,7 +41,7 @@ struct CalendarDailyInfoView: View {
                             .italic()
                     } else {
                         ForEach(entriesForDate) { entry in
-                            GroupBox(label: Text(entry.category.rawValue.capitalized)) {
+                            GroupBox {
                                 switch entry.contentType {
                                 case .diary, .plan:
                                     TextField("Entry content", text: Binding(
@@ -49,7 +49,7 @@ struct CalendarDailyInfoView: View {
                                         set: { viewModel.update(entry: entry, with: $0) }
                                     ))
                                     .textFieldStyle(.roundedBorder)
-    
+
                                 case .rating:
                                     HStack(spacing: 20) {
                                         VStack {
@@ -80,6 +80,14 @@ struct CalendarDailyInfoView: View {
                                             .pickerStyle(.menu)
                                         }
                                     }
+                                }
+                            } label: {
+                                HStack {
+                                    Text(entry.category.rawValue.capitalized)
+                                    Spacer()
+                                    Text(entry.contentType.rawValue.capitalized)
+                                        .font(.caption)
+                                        .foregroundColor(.secondary)
                                 }
                             }
                             .padding(.vertical, 4)
