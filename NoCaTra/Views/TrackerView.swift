@@ -90,7 +90,8 @@ public struct TrackerView: View {
                         ratingOne: ratingOneBinding,
                         ratingTwo: ratingTwoBinding,
                         isLocked: isLockedBinding,
-                        previousContent: entry.contentType == .rating ? diaryFromTwoDaysAgo(for: entry.category) : nil
+                        previousContent: entry.contentType == .rating ? diaryFromTwoDaysAgo(for: entry.category) : nil,
+                        streak: streak(for: entry)
                     )
                 }
             }
@@ -158,5 +159,28 @@ public struct TrackerView: View {
             ratingOneState[entry.id] = ratingOneState[entry.id] ?? entry.ratingOne
             ratingTwoState[entry.id] = ratingTwoState[entry.id] ?? entry.ratingTwo
         }
+    }
+
+    internal func streak(for module: EntryModule) -> Int {
+        let calendar = Calendar.current
+        var currentDate = calendar.startOfDay(for: module.date)
+        var count = 0
+
+        while true {
+            guard let match = allEntries.first(where: { entry in
+                entry.category == module.category &&
+                entry.contentType == module.contentType &&
+                calendar.isDate(entry.date, inSameDayAs: currentDate)
+            }) else { break }
+
+            guard match.isCompleted else { break }
+
+            count += 1
+
+            guard let previous = calendar.date(byAdding: .day, value: -1, to: currentDate) else { break }
+            currentDate = previous
+        }
+
+        return count
     }
 }

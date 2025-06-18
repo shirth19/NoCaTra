@@ -24,11 +24,19 @@ struct EntryModuleView: View {
     @Binding var ratingTwo: Int?
     @Binding var isLocked: Bool
     var previousContent: String? = nil
+    var streak: Int = 0
     
     @State private var isSessionStarted = false
     @State private var sessionTimer: Timer? = nil
     @State private var canStartSession = true
     @State private var timeRemaining: Int = 300
+
+    private var canRate: Bool {
+        if module.contentType == .rating {
+            guard let text = previousContent, !text.isEmpty else { return false }
+        }
+        return true
+    }
     
     // MARK: - Computed Properties
     private var title: String {
@@ -73,6 +81,9 @@ struct EntryModuleView: View {
         if isOpen {
             return "Done"
         }
+        if !canRate {
+            return "Nothing to grade"
+        }
         if !canStartSession {
             return "Completed"
         }
@@ -84,8 +95,14 @@ struct EntryModuleView: View {
         VStack(spacing: 8) {
             // Header
             HStack {
-                Text(title)
-                    .font(.headline)
+                HStack(spacing: 4) {
+                    Text(title)
+                        .font(.headline)
+                    if streak > 0 {
+                        Text("🔥 \(streak)")
+                            .font(.subheadline)
+                    }
+                }
                 Spacer()
                 if isOpen {
                     Text("\(timeRemaining / 60):\(String(format: "%02d", timeRemaining % 60))")
@@ -101,7 +118,7 @@ struct EntryModuleView: View {
                         }
                     }
                 }
-                .disabled(!canStartSession && !isOpen)
+                .disabled((!canStartSession && !isOpen) || !canRate)
             }
             
             // Middle portion (only if open)
@@ -120,6 +137,7 @@ struct EntryModuleView: View {
             caption
                 .font(.caption)
                 .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
         }
         .padding()
         .background(
@@ -134,6 +152,7 @@ struct EntryModuleView: View {
         isSessionStarted = true
         canStartSession = false
         timeRemaining = 300
+        module.isCompleted = false
         sessionTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if timeRemaining > 0 {
                 timeRemaining -= 1
@@ -143,6 +162,7 @@ struct EntryModuleView: View {
                     isOpen = false
                     isSessionStarted = false
                     timer.invalidate()
+                    module.isCompleted = true
                 }
             }
         }
@@ -153,5 +173,6 @@ struct EntryModuleView: View {
         sessionTimer = nil
         isOpen = false
         isSessionStarted = false
+        module.isCompleted = true
     }
 }
