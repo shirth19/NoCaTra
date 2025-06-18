@@ -7,6 +7,6 @@ Goals:
 - Focus towards enjoying habits
 
 Next changes:
-- change the order to be all food together, than all exercise, than all meditation
-- change what day it commits to (grades yesterday)
-- Create streaks
+- Make an unlockable section?
+- Change the calendar to make it more clear
+- Make the calendar say what is diary vs plan
