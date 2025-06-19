@@ -89,7 +89,7 @@ struct CalendarDailyInfoView: View {
                                         Text(entry.contentType.rawValue).bold()
                                     )
                                 }
-                                .foregroundColor(entry.contentType.color)
+                                .foregroundColor(entry.category.color)
                             }
                             .padding(.vertical, 4)
                         }

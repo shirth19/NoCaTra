@@ -9,13 +9,4 @@ extension EntryContentType {
         case .rating: return "star"
         }
     }
-
-    /// Color used to highlight this entry type.
-    var color: Color {
-        switch self {
-        case .diary:  return .blue
-        case .plan:   return .teal
-        case .rating: return .orange
-        }
-    }
 }
