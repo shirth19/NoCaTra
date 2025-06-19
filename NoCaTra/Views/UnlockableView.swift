@@ -31,7 +31,7 @@ struct UnlockableView: View {
                 
                 Text("Toggle entries to unlock or lock them")
                     .font(.caption)
-                    .foregroundColor(.secondary)
+                    .foregroundColor(ColorTheme.secondaryText)
                     .padding()
             }
             .navigationTitle("Unlock Features")

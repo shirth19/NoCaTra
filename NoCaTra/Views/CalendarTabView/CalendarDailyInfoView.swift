@@ -31,13 +31,13 @@ struct CalendarDailyInfoView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Today's Entries")
                         .font(.subheadline)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(ColorTheme.secondaryText)
                     
                     let entriesForDate = viewModel.entries(for: selectedDate, context: context)
     
                     if entriesForDate.isEmpty {
                         Text("No entries for today")
-                            .foregroundColor(.secondary)
+                            .foregroundColor(ColorTheme.secondaryText)
                             .italic()
                     } else {
                         ForEach(entriesForDate) { entry in
@@ -90,6 +90,6 @@ struct CalendarDailyInfoView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .background(Color(white: 0.95))
+        .background(ColorTheme.background)
     }
 }

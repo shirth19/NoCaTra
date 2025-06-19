@@ -26,7 +26,7 @@ struct EntryModuleMiddleView: View {
                 TextEditor(text: $content)
                     .frame(height: 100)
                     .padding(8)
-                    .background(.gray.opacity(0.1))
+                    .background(ColorTheme.inputBorder.opacity(0.1))
                     .cornerRadius(8)
                 
             case .rating:
@@ -34,7 +34,7 @@ struct EntryModuleMiddleView: View {
                     if let text = previousContent, !text.isEmpty {
                         Text(text)
                             .font(.subheadline)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(ColorTheme.secondaryText)
                             .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     HStack(spacing: 20) {

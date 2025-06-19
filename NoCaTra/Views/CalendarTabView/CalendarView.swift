@@ -20,7 +20,7 @@ struct CalendarView: View {
             HStack {
                 Button(action: previousMonth) {
                     Image(systemName: "chevron.left")
-                        .foregroundColor(.blue)
+                        .foregroundColor(ColorTheme.primaryGreen)
                 }
                 
                 Text(monthYearString)
@@ -30,7 +30,7 @@ struct CalendarView: View {
                 
                 Button(action: nextMonth) {
                     Image(systemName: "chevron.right")
-                        .foregroundColor(.blue)
+                        .foregroundColor(ColorTheme.primaryGreen)
                 }
             }
             .padding(.horizontal)
@@ -40,7 +40,7 @@ struct CalendarView: View {
                 ForEach(weekdaySymbols, id: \.self) { symbol in
                     Text(symbol)
                         .frame(maxWidth: .infinity)
-                        .foregroundColor(.gray)
+                        .foregroundColor(ColorTheme.secondaryText)
                 }
             }
             
@@ -129,10 +129,10 @@ struct DayView: View {
         Group {
             if isSelected {
                 Circle()
-                    .fill(Color.blue)
+                    .fill(ColorTheme.primaryGreen)
             } else if isToday {
                 Circle()
-                    .stroke(Color.blue, lineWidth: 1)
+                    .stroke(ColorTheme.primaryGreen, lineWidth: 1)
             }
         }
     }

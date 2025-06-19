@@ -136,13 +136,13 @@ struct EntryModuleView: View {
             // Caption
             caption
                 .font(.caption)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(ColorTheme.secondaryText)
                 .multilineTextAlignment(.center)
         }
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(.background)
+                .fill(ColorTheme.background)
                 .shadow(radius: 2)
         )
     }
