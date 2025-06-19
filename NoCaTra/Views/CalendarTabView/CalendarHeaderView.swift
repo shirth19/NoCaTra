@@ -15,12 +15,13 @@ struct CalendarHeaderView: View {
         Text("Tracker Calendar")
             .font(.title2)
             .fontWeight(.bold)
-            .padding(8)
-            .frame(maxWidth: .infinity)
-            .background(
+            .padding(.horizontal, 8)
+            .padding(.vertical, 4)
+            .overlay(
                 RoundedRectangle(cornerRadius: 12)
-                    .stroke(ColorTheme.accent, lineWidth: 2)
+                    .stroke(Color.black, lineWidth: 1)
             )
+            .frame(maxWidth: .infinity)
             .padding(.horizontal)
     }
 }

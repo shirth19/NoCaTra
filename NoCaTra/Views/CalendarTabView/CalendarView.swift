@@ -67,7 +67,7 @@ struct CalendarView: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .stroke(ColorTheme.accent, lineWidth: 2)
+                .stroke(Color.black, lineWidth: 1)
         )
         .padding(.horizontal)
     }
