@@ -12,4 +12,9 @@ extension EntryCategory {
             return .purple
         }
     }
+
+    /// A lighter background color derived from the base category color.
+    var lightColor: Color {
+        color.opacity(0.15)
+    }
 }

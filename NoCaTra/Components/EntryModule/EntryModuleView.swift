@@ -142,7 +142,7 @@ struct EntryModuleView: View {
         .padding()
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(.background)
+                .fill(module.category.lightColor)
                 .shadow(radius: 2)
         )
     }
