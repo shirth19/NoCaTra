@@ -41,7 +41,7 @@ struct CalendarDailyInfoView: View {
                             .italic()
                     } else {
                         ForEach(entriesForDate) { entry in
-                            GroupBox(label: Text("\(entry.category.rawValue) \(entry.contentType.rawValue)")) {
+                            GroupBox {
                                 switch entry.contentType {
                                 case .diary, .plan:
                                     TextField("Entry content", text: Binding(
@@ -49,7 +49,7 @@ struct CalendarDailyInfoView: View {
                                         set: { viewModel.update(entry: entry, with: $0) }
                                     ))
                                     .textFieldStyle(.roundedBorder)
-    
+
                                 case .rating:
                                     HStack(spacing: 20) {
                                         VStack {
@@ -65,7 +65,7 @@ struct CalendarDailyInfoView: View {
                                             }
                                             .pickerStyle(.menu)
                                         }
-    
+
                                         VStack {
                                             Text("Happiness")
                                                 .font(.caption)
@@ -81,6 +81,15 @@ struct CalendarDailyInfoView: View {
                                         }
                                     }
                                 }
+                            } label: {
+                                HStack {
+                                    Image(systemName: entry.contentType.iconName)
+                                    (
+                                        Text(entry.category.rawValue + " ") +
+                                        Text(entry.contentType.rawValue).bold()
+                                    )
+                                }
+                                .foregroundColor(entry.category.color)
                             }
                             .padding(.vertical, 4)
                         }
