@@ -18,7 +18,7 @@ struct ContentView: View {
                 .tag(1)
             
             
-            CalendarTabView()
+            CalendarTabView(unlockableViewModel: unlockableViewModel)
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
