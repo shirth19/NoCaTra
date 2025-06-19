@@ -22,16 +22,19 @@ struct CalendarView: View {
                     Image(systemName: "chevron.left")
                         .foregroundColor(.blue)
                 }
-                
+
                 Text(monthYearString)
                     .font(.title2)
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity)
-                
+
                 Button(action: nextMonth) {
                     Image(systemName: "chevron.right")
                         .foregroundColor(.blue)
                 }
+
+                Button("Today", action: goToToday)
+                    .foregroundColor(.blue)
             }
             .padding(.horizontal)
             
@@ -108,6 +111,12 @@ struct CalendarView: View {
         if let newDate = calendar.date(byAdding: .month, value: 1, to: displayedMonth) {
             displayedMonth = newDate
         }
+    }
+
+    private func goToToday() {
+        let today = Date()
+        displayedMonth = today
+        selectedDate = today
     }
 }
 
