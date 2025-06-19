@@ -11,6 +11,7 @@ import SwiftData
 struct CalendarDailyInfoView: View {
     let selectedDate: Date
     @ObservedObject var viewModel: CalendarViewModel
+    @ObservedObject var unlockableViewModel: UnlockableViewModel
     @Environment(\.modelContext) private var context
     
     private let dateFormatter: DateFormatter = {
@@ -33,7 +34,9 @@ struct CalendarDailyInfoView: View {
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                     
-                    let entriesForDate = viewModel.entries(for: selectedDate, context: context)
+                    let entriesForDate = viewModel
+                        .entries(for: selectedDate, context: context)
+                        .filter(isUnlocked)
     
                     if entriesForDate.isEmpty {
                         Text("No entries for today")
@@ -100,5 +103,19 @@ struct CalendarDailyInfoView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .background(Color(white: 0.95))
+    }
+
+    private func isUnlocked(_ entry: EntryModule) -> Bool {
+        switch (entry.category, entry.contentType) {
+        case (.food, .diary): return unlockableViewModel.unlockStates[0]
+        case (.food, .plan): return unlockableViewModel.unlockStates[1]
+        case (.food, .rating): return unlockableViewModel.unlockStates[2]
+        case (.exercise, .diary): return unlockableViewModel.unlockStates[3]
+        case (.exercise, .plan): return unlockableViewModel.unlockStates[4]
+        case (.exercise, .rating): return unlockableViewModel.unlockStates[5]
+        case (.mindfulness, .diary): return unlockableViewModel.unlockStates[6]
+        case (.mindfulness, .plan): return unlockableViewModel.unlockStates[7]
+        case (.mindfulness, .rating): return unlockableViewModel.unlockStates[8]
+        }
     }
 }
