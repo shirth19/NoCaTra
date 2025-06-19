@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// Visual calendar component used in the calendar page.
+/// Wrapped in a rounded border to match the aesthetic of the modules.
+
 struct CalendarView: View {
     @Binding var selectedDate: Date
     @State private var displayedMonth = Date()
@@ -62,6 +65,11 @@ struct CalendarView: View {
             }
         }
         .padding()
+        .background(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(ColorTheme.accent, lineWidth: 2)
+        )
+        .padding(.horizontal)
     }
     
     private var monthYearString: String {
