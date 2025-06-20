@@ -8,5 +8,4 @@ Goals:
 
 Next changes:
 - Make an unlockable section?
-- Change the calendar to make it more clear
-- Make the calendar say what is diary vs plan
+- Ai to help make an estimate of monthly cals, things you enjoyed, and things you might want to try
